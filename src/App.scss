@@ -7,7 +7,7 @@
 
 .wrapper {
   background: #171717;
-  width: 100%;
+  min-height: 100vh;
 
    .form{
     background: #313131;
@@ -16,6 +16,18 @@
     border-radius: 0.5rem;
     max-width: 25rem;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    & > .title-message {
+      font-size: 1.5rem; /* 24px */
+      line-height: 2rem; /* 32px */
+      color: white;
+      text-align: center;
+      margin-bottom: 2rem;
+      max-width: 15rem;
+      align-self: center;
+    }
 
     & > form {
       display: flex;
@@ -77,38 +89,43 @@
 
       & > .terms-checkbox {
         display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 0.5rem;
+        flex-direction: column;
 
-        & > .input-box {
-          position: relative;
+        & > .data {
           display: flex;
+          flex-direction: row;
           align-items: center;
+          gap: 0.5rem;
 
-          & > input {
-            appearance: none;
-            width: 1rem;
-            height: 1rem;
-            border: 0.1rem solid white;
-            border-radius: 0.2rem;
-            cursor: pointer;
-
-            &:checked {
-              background: #00AE1C;
+          & > .input-box {
+            position: relative;
+            display: flex;
+            align-items: center;
+  
+            & > input {
+              appearance: none;
+              width: 1rem;
+              height: 1rem;
+              border: 0.1rem solid white;
+              border-radius: 0.2rem;
+              cursor: pointer;
+  
+              &:checked {
+                background: #00AE1C;
+              }
             }
-          }
-          
-          & > input:checked + .svg {
-            display: block;
-          }
-
-          .svg {
-            position: absolute;
-            width: 100%;
-            height: 75%;
-            pointer-events: none;
-            display: none;
+            
+            & > input:checked + .svg {
+              display: block;
+            }
+  
+            .svg {
+              position: absolute;
+              width: 100%;
+              height: 75%;
+              pointer-events: none;
+              display: none;
+            }
           }
         }
       }
@@ -130,6 +147,19 @@
           scale: 0.95;
         }
       }
+
+      & > div > .formError {
+        color: red;
+        font-size: 0.75rem; /* 12px */
+        line-height: 1rem; /* 16px */
+      }
     }
    }
+}
+
+@media (min-width: 768px) {
+  .wrapper {
+    flex-direction: row;
+
+  }
 }

@@ -5,7 +5,7 @@ import ControlledForm from "./components/Controlled/controlledForm";
 function App() {
   return (
     <>
-      <div className="wrapper h-screen flex items-center justify-center flex-col gap-10">
+      <div className="wrapper flex items-center justify-center flex-col gap-10 py-8">
         <UncontrolledForm></UncontrolledForm>
         <ControlledForm></ControlledForm>
       </div>
