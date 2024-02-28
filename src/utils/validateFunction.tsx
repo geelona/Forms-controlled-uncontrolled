@@ -1,4 +1,20 @@
+// middleware for validate function
 export default function validate(values: any) {
+  if (
+    values.usernameField &&
+    values.emailField &&
+    values.passwordField &&
+    values.confirmPasswordField &&
+    values.termsCheckbox
+  ) {
+    return {};
+  } else {
+    return validateFNC(values);
+  }
+}
+
+// validate function
+function validateFNC(values: any) {
   const errors: any = {};
   const regex = /^[\w\-\.]+@([\w-]+\.)+[\w-]{2,}$/;
 
