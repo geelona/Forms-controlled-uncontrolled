@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import validate from "../validateFunction";
+import validate from "../../utils/validateFunction";
 
 export default function controlledForm() {
   const initialValues = {
